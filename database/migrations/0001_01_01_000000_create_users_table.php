@@ -12,33 +12,33 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('phone')->unique();           
-            $table->timestamp('email_verified_at')->nullable();
-            $table->timestamp('phone_verified_at')->nullable(); 
-            $table->string('password'); 
-            $table->string('avatar')->nullable();        
-            $table->float('rating')->default(5.0);       // Рейтинг пользователя
-            $table->enum('status', ['active', 'blocked', 'pending'])->default('pending'); // Статус
-            $table->rememberToken();
-            $table->timestamps();
+            $table->id(); // Уникальный идентификатор пользователя
+            $table->string('name'); // Имя пользователя
+            $table->string('email')->unique(); // Уникальный email пользователя
+            $table->string('phone')->unique(); // Уникальный номер телефона пользователя
+            $table->timestamp('email_verified_at')->nullable(); // Время подтверждения email
+            $table->timestamp('phone_verified_at')->nullable(); // Время подтверждения телефона
+            $table->string('password'); // Хэшированный пароль пользователя
+            $table->string('avatar')->nullable(); // Путь к файлу аватара пользователя
+            $table->float('rating')->default(5.0); // Рейтинг пользователя, по умолчанию 5.0
+            $table->enum('status', ['active', 'blocked', 'pending'])->default('pending'); // Статус аккаунта
+            $table->rememberToken(); // Токен для функции "Запомнить меня"
+            $table->timestamps(); // Создает поля created_at и updated_at
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
-            $table->string('email')->primary();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
+            $table->string('email')->primary(); // Email пользователя как первичный ключ
+            $table->string('token'); // Токен для сброса пароля
+            $table->timestamp('created_at')->nullable(); // Время создания токена
         });
 
         Schema::create('sessions', function (Blueprint $table) {
-            $table->string('id')->primary();
-            $table->foreignId('user_id')->nullable()->index();
-            $table->string('ip_address', 45)->nullable();
-            $table->text('user_agent')->nullable();
-            $table->longText('payload');
-            $table->integer('last_activity')->index();
+            $table->string('id')->primary(); // Уникальный идентификатор сессии
+            $table->foreignId('user_id')->nullable()->index(); // Внешний ключ на пользователя
+            $table->string('ip_address', 45)->nullable(); // IP адрес пользователя
+            $table->text('user_agent')->nullable(); // Информация о браузере пользователя
+            $table->longText('payload'); // Данные сессии в сериализованном виде
+            $table->integer('last_activity')->index(); // Время последней активности, индексировано
         });
     }
 
