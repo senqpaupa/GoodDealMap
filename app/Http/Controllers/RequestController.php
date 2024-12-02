@@ -10,17 +10,29 @@ use App\Http\Controllers\Controller;
 
 class RequestController extends Controller
 {
+    /**
+     * Конструктор контроллера
+     * Требует аутентификацию для всех методов
+     */
     public function __construct()
     {
         $this->middleware('auth:sanctum');
     }
 
+    /**
+     * Получение списка всех запросов
+     * GET /api/requests
+     */
     public function index(): JsonResponse
     {
         $requests = Request::with('user')->get();
         return response()->json(['requests' => $requests]);
     }
 
+    /**
+     * Создание нового запроса
+     * POST /api/requests
+     */
     public function store(HttpRequest $request): JsonResponse
     {
         $validated = $request->validate([
@@ -48,11 +60,19 @@ class RequestController extends Controller
         ], 201);
     }
 
+    /**
+     * Получение информации о конкретном запросе
+     * GET /api/requests/{id}
+     */
     public function show(Request $request): JsonResponse
     {
         return response()->json(['request' => $request->load('user')]);
     }
 
+    /**
+     * Обновление существующего запроса
+     * PUT /api/requests/{id}
+     */
     public function update(HttpRequest $httpRequest, Request $request): JsonResponse
     {
         if ($request->user_id !== Auth::id()) {
@@ -80,6 +100,10 @@ class RequestController extends Controller
         ]);
     }
 
+    /**
+     * Удаление запроса
+     * DELETE /api/requests/{id}
+     */
     public function destroy(Request $request): JsonResponse
     {
         if ($request->user_id !== Auth::id()) {
@@ -90,6 +114,10 @@ class RequestController extends Controller
         return response()->json(['message' => 'Запрос успешно удален']);
     }
 
+    /**
+     * Поиск ближайших запросов
+     * GET /api/requests/nearby?latitude=55.7558&longitude=37.6173&radius=10
+     */
     public function nearby(HttpRequest $request): JsonResponse
     {
         $validated = $request->validate([
