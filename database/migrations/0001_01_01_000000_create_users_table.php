@@ -16,8 +16,6 @@ return new class extends Migration
             $table->string('name'); // Имя пользователя
             $table->string('email')->unique(); // Уникальный email пользователя
             $table->string('phone')->unique(); // Уникальный номер телефона пользователя
-            $table->timestamp('email_verified_at')->nullable(); // Время подтверждения email
-            $table->timestamp('phone_verified_at')->nullable(); // Время подтверждения телефона
             $table->string('password'); // Хэшированный пароль пользователя
             $table->string('avatar')->nullable(); // Путь к файлу аватара пользователя
             $table->float('rating')->default(5.0); // Рейтинг пользователя, по умолчанию 5.0

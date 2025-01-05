@@ -6,12 +6,11 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-
     public function up(): void
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->id(); // Уникальный идентификатор запроса
-            $table->foreignId('user_id')->constrained(); // Внешний ключ на пользователя, создавшего запрос
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Внешний ключ на пользователя
             
             // Основная информация о запросе
             $table->string('title'); // Заголовок запроса
@@ -38,8 +37,14 @@ return new class extends Migration
             $table->string('urgency')->nullable(); // Срочность запроса (например: "высокая", "средняя", "низкая")
             $table->json('files')->nullable(); // Прикрепленные файлы (фотографии, документы)
             
+            // Индексы для оптимизации
+            $table->index('status');
+            $table->index('type');
+            $table->index(['latitude', 'longitude']);
+            
             // Системные временные метки
-            $table->timestamps(); // created_at и updated_at
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

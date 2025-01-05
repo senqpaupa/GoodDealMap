@@ -15,7 +15,7 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'phone' => 'required|string|unique:users|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
-            'password' => 'required|string|min:8|confirmed',
+            'password' => 'required|string|min:8',
             'avatar' => 'nullable|image|mimes:jpeg,png,jpg|max:2048'
         ]);
 
@@ -38,13 +38,13 @@ class RegisterController extends Controller
             'status' => 'pending'
         ]);
 
-        // Send verification emails/SMS (implement this later)
-        // $user->sendEmailVerificationNotification();
-        // $user->sendPhoneVerificationNotification();
+        // Создаем токен для нового пользователя
+        $token = $user->createToken('auth_token')->plainTextToken;
 
         return response()->json([
             'message' => 'User successfully registered',
-            'user' => $user
+            'user' => $user,
+            'token' => $token
         ], 201);
     }
 }
