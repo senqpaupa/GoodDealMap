@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id(); // Уникальный идентификатор пользователя
             $table->string('name'); // Имя пользователя
             $table->string('email')->unique(); // Уникальный email пользователя
-            $table->string('phone')->unique(); // Уникальный номер телефона пользователя
+            $table->string('phone')->unique(); // @фывфывУникальный номер телефона пользователя
             $table->string('password'); // Хэшированный пароль пользователя
             $table->string('avatar')->nullable(); // Путь к файлу аватара пользователя
             $table->float('rating')->default(5.0); // Рейтинг пользователя, по умолчанию 5.0
