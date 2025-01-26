@@ -19,7 +19,7 @@ return new class extends Migration
                 'inactive',
                 'blocked'
             ])->default('active');
-            $table->enum('role', ['user', 'admin'])->default('user');
+            $table->string('role')->default('user');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->string('avatar')->nullable();
