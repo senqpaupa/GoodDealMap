@@ -7,8 +7,10 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as Middleware;
 class VerifyCsrfToken extends Middleware
 {
     protected $except = [
-        'api/*',  // Отключаем CSRF для всех API маршрутов
-        '/login',
-        '/register'
+        'api/*',
+        'sanctum/csrf-cookie',
+        'login',
+        'register',
+        'logout'
     ];
 } 

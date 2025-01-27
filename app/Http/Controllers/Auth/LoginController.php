@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -17,19 +16,20 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
-        $user = User::where('email', $credentials['email'])->first();
+        if (Auth::attempt($credentials)) {
+            $user = User::find(Auth::id());
+            $token = $user->createToken('auth-token')->plainTextToken;
 
-        if (!$user || !Hash::check($credentials['password'], $user->password)) {
             return response()->json([
-                'message' => 'Неверный email или пароль'
-            ], 401);
+                'message' => 'Успешная авторизация',
+                'user' => $user,
+                'token' => $token
+            ]);
         }
 
         return response()->json([
-            'message' => 'Успешная авторизация',
-            'user' => $user,
-            'token' => $user->createToken('auth-token')->plainTextToken
-        ]);
+            'message' => 'Неверные учетные данные'
+        ], 401);
     }
 
     public function logout(Request $request)

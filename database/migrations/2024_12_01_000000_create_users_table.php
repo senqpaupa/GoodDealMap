@@ -14,15 +14,13 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('phone')->nullable();
-            $table->enum('status', [
-                'active',
-                'inactive',
-                'blocked'
-            ])->default('active');
+            $table->integer('age')->nullable();
+            $table->text('about')->nullable();
+            $table->string('avatar')->nullable();
+            $table->string('status')->default('active');
             $table->string('role')->default('user');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
-            $table->string('avatar')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
