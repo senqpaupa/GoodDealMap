@@ -65,11 +65,11 @@ API использует Laravel Sanctum для аутентификации. У
 - **GET /api/user/userinfo/{id}**: Получение информации о конкретном пользователе
 - **POST /api/user/avatar**: Добавление аватара ползователю
 - **PUT /api/user/profile**: Редактирование профиля пользователя
-- **GET /api/requests/nearby**: Получиь информацию о ближайших по георасположению запросах
-- **POST /api/requests/**: Создать запрос 
-- **GET /api/requests/{id}**: Получить конкретный запрос.
-- **PUT /api/requests/{id}**: Обновить существующий запрос.
-- **DELETE /api/requests/{id}**: Удалить запрос.
+- **GET /api/requests/nearby**: Получиь информацию о ближайших по георасположению заданиях
+- **POST /api/requests/**: Создать задание 
+- **GET /api/requests/{id}**: Получить конкретное задание.
+- **PUT /api/requests/{id}**: Обновить существующее задание.
+- **DELETE /api/requests/{id}**: Удалить задание.
 
 
 ## Вклад
