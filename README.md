@@ -4,10 +4,10 @@
 ## Описание проекта
 
 
+![Screenshot](https://s.iimg.su/s/03/268DCTqC9KMjkeyMp96dcFZd3ozrMTy5gJE26R9A.png)
+![Screenshot](https://s.iimg.su/s/03/V89OawrWa2akhAHXskqU95z8z390WfOmVCXRa5uc.png)
+![Screenshot](https://s.iimg.su/s/03/f8CXh7NACheLakukmxp4AiXqatTbZtH8CxNYrTDq.png)
 ![Screenshot](https://s.iimg.su/s/03/wu0V6o4xYrCdwHxXrCkAwutpnkvdLvM1vpYnecAI.png)
-![Screenshot](https://i.postimg.cc/n9jrbLkW/temp-Imageg-WFi-Tk.avif)
-![Screenshot](https://i.postimg.cc/DW681H0x/temp-Image-TBxl-RT.avif)
-![Screenshot](https://i.postimg.cc/wyB322sg/temp-Imageujn-O67.avif)
 
 GoodDealMap — это платформа, которая позволяет пользователям добавлять задания на карту, чтобы другие могли их видеть и помогать с выполнением этих просьб. Основная идея проекта — создание сообщества, где люди могут делиться своими нуждами и получать помощь от других участников.
 
