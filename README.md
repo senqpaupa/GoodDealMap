@@ -4,7 +4,7 @@
 ## Описание проекта
 
 
-![Screenshot](https://i.postimg.cc/VrHvVtjM/temp-Image-GCFHn-A.avif)
+![Screenshot](https://s.iimg.su/s/03/wu0V6o4xYrCdwHxXrCkAwutpnkvdLvM1vpYnecAI.png)
 ![Screenshot](https://i.postimg.cc/n9jrbLkW/temp-Imageg-WFi-Tk.avif)
 ![Screenshot](https://i.postimg.cc/DW681H0x/temp-Image-TBxl-RT.avif)
 ![Screenshot](https://i.postimg.cc/wyB322sg/temp-Imageujn-O67.avif)
