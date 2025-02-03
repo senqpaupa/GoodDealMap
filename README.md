@@ -3,10 +3,10 @@
 Добро пожаловать в проект GoodDealMap API. Это RESTful API, разработанный на Laravel, который использует Laravel Sanctum для аутентификации пользователей и управления токенами.
 ## Описание проекта
 
-![Screenshot](https://github.com/senqpaupa/GoodDealMap/blob/master/gitmap.png)
-![Screenshot](https://github.com/senqpaupa/GoodDealMap/blob/master/profileedit.png)
-![Screenshot](https://github.com/senqpaupa/GoodDealMap/blob/master/chat.png)
-![Screenshot](https://github.com/senqpaupa/GoodDealMap/blob/master/tasks.png)
+![Screenshot](https://ibb.co/RG3CgwLv)
+![Screenshot](https://ibb.co/9HfyW9nr)
+![Screenshot](https://ibb.co/50hLF78)
+![Screenshot](https://ibb.co/HDfMB64j)
 
 GoodDealMap — это платформа, которая позволяет пользователям добавлять задания на карту, чтобы другие могли их видеть и помогать с выполнением этих просьб. Основная идея проекта — создание сообщества, где люди могут делиться своими нуждами и получать помощь от других участников.
 
